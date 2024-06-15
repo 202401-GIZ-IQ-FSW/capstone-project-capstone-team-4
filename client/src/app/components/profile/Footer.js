@@ -10,9 +10,9 @@ const Footer = () => {
         <h5 className="ps-2">Contact Us</h5>
       </div>
       <div className="flex ">
-        <h5 className="ps-2"><FaFacebookF /></h5>
-        <h5 className="ps-2"><FaXTwitter /></h5>
-        <h5 className="ps-2"><FaInstagram /></h5>
+        <h5 className="ps-2"><FaFacebookF/></h5>
+        <h5 className="ps-2"><FaXTwitter/></h5>
+        <h5 className="ps-2"><FaInstagram/></h5>
       </div>
     </footer>
   );
