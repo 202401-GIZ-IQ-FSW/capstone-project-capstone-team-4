@@ -3,6 +3,7 @@ import Image from "next/image";
 import { FaCheck } from "react-icons/fa6";
 import { FaPlus } from "react-icons/fa6";
 import { IoCloseSharp } from "react-icons/io5";
+import { FaMapPin } from "react-icons/fa";
 
 const page = () => {
   return (
@@ -21,7 +22,7 @@ const page = () => {
           </div>
           <div>
             <h3 className="font-bold text-2xl">Technical Support User</h3>
-            <h6 className="px-1 py-2">Location: New York</h6>
+            <h6 className="px-1 py-2 inline-flex text-nowrap"> <FaMapPin  className="mt-1 me-2" size={15}/> Location: New York</h6>
 
             <div className="flex border-8 p-6 space-x-8 mt-2">
               <div>
@@ -104,8 +105,8 @@ const page = () => {
               />
             </div>
             <h6 className="px-1 text-sm grow">Support Agent: Laura Evans</h6>
-            <FaPlus className=" border-2 p-1"  size={25}/>
-            <IoCloseSharp size={20}/>
+            <FaPlus className=" border-2 p-1 mx-4 cursor-pointer"  size={25}/>
+            <IoCloseSharp className=" cursor-pointer" size={20}/>
           </div>
           <button className="mt-4 p-2 border-2">All Tickets</button>
         </div>

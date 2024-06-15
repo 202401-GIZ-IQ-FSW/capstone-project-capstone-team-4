@@ -671,8 +671,17 @@ video {
 .mt-4 {
   margin-top: 1rem;
 }
+.mt-1 {
+  margin-top: 0.25rem;
+}
+.me-2 {
+  margin-inline-end: 0.5rem;
+}
 .block {
   display: block;
+}
+.inline {
+  display: inline;
 }
 .flex {
   display: flex;
@@ -750,6 +759,9 @@ video {
 .grow {
   flex-grow: 1;
 }
+.cursor-pointer {
+  cursor: pointer;
+}
 .grid-cols-1 {
   grid-template-columns: repeat(1, minmax(0, 1fr));
 }
@@ -786,6 +798,9 @@ video {
 }
 .self-end {
   align-self: flex-end;
+}
+.text-nowrap {
+  text-wrap: nowrap;
 }
 .rounded-full {
   border-radius: 9999px;
