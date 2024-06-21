@@ -10,7 +10,7 @@ const customStyles = {
     bottom: "auto",
     marginRight: "-50%",
     transform: "translate(-50%, -50%)",
-    maxWidth: "600px",
+    maxWidth: "560px",
     width: "90%",
   },
 };
@@ -151,12 +151,13 @@ const SearchModal = ({ isOpen, closeModal }) => {
                   <div className="flex w-full md:w-5/6">
                     <div className="mt-3 w-full">
                       <Field
-                        name="status"
+                        name="submittedOn"
+                        type="number"
                         placeholder="138"
                         className="border px-3 py-2 w-full"
                       />
                       <ErrorMessage
-                        name="status"
+                        name="submittedOn"
                         component="div"
                         className="text-red-500 text-xs mt-1"
                       />
@@ -239,6 +240,16 @@ const SearchModal = ({ isOpen, closeModal }) => {
                       <span className="ml-2 text-nowrap">Assign to</span>
                     </label>
                   </div>
+                </div>
+              </div>
+              <div className="flex justify-between items-center mt-6">
+                <div className="text-left text-lg font-bold text-gray-500">
+                  Clear
+                </div>
+                <div className="text-right">
+                  <button className="bg-white border border-gray-700 hover:border-gray-400 text-gray-700 font-semibold py-2 px-20 rounded-sm shadow-sm hover:shadow-md transition duration-300 ease-in-out">
+                    Search
+                  </button>
                 </div>
               </div>
             </div>
