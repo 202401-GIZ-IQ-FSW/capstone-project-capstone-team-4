@@ -1,6 +1,21 @@
+"use client";
+
 import Link from "next/link";
+import SearchModal from "./SearchModal";
+import React, { useState } from "react";
 
 export default function Navbar() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => {
+    console.log("running...");
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <nav className="flex justify-between items-center px-8 md:px-44 w-full pt-12 pb-8">
       <div className="flex items-center gap-2">
@@ -13,9 +28,8 @@ export default function Navbar() {
         <Link href="/">
           <p>Home</p>
         </Link>
-        <Link href="/">
-          <p>Search tickets</p>
-        </Link>
+        <button onClick={openModal}>Search tickets</button>{" "}
+        <SearchModal isOpen={isModalOpen} closeModal={closeModal} />
         <Link href="/">
           <p>Create</p>
         </Link>

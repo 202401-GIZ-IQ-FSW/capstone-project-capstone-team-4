@@ -1,4 +1,4 @@
-// File: /usr/src/app/client/src/app/landing/page.jsx
+// File: E:\allPrograms\recoded\capstone-project-capstone-team-4\client\src\app\landing\page.jsx
 import * as entry from '../../../../src/app/landing/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

@@ -2,7 +2,7 @@ import LandingPage from "./landing/page";
 
 export default function Home() {
   return (
-    <main>
+    <main id="__next">
       <LandingPage />
     </main>
   );
