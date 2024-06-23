@@ -4,11 +4,13 @@ import { FaCheck } from "react-icons/fa6";
 import { FaPlus } from "react-icons/fa6";
 import { IoCloseSharp } from "react-icons/io5";
 import { FaMapPin } from "react-icons/fa";
+import Navbar from "../components/profile/Navbar";
 
 const page = () => {
   return (
-    <main className="flex p-8">
-      <div></div>
+    <div className="mx-auto md:w-fit">
+    <Navbar/>
+    <main className="flex p-8 md:flex-row flex-col">
       {/* left side  */}
       <div className="pe-12">
         <div className="flex">
@@ -90,7 +92,7 @@ const page = () => {
           </div>
         </div>
       </div>
-      <div className=" ps-12 w-1/3">
+      <div className=" md:ps-12 md:w-1/3 w-fit">
         <h3 className="font-medium text-xl pb-6">
           Tickets Statistics Overview
         </h3>
@@ -130,6 +132,7 @@ const page = () => {
         </div>
       </div>
     </main>
+    </div>
   );
 };
 
