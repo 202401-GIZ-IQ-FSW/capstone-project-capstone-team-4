@@ -7,6 +7,10 @@ node_modules
 .pnp.js
 .yarn/install-state.gz
 
+client/.next/cache/webpack/
+client/.next/server/app/_not-found/page_client-reference-manifest.js
+client/.next/server/app/page_client-reference-manifest.js
+
 # testing
 /coverage
 
