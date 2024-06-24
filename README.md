@@ -1,6 +1,6 @@
 # Capstone Full-Stack Template
 
-Welcome to the Capstone Full-Stack Template! This repository is a starting point for full-stack development capstone projects, featuring a backend Express server with MongoDB, and a frontend Next.js client, both dockerized for ease of development and deployment.
+Welcome to the Capstone Full-Stack Template! This repository is a starting point for full-stack development capstone projects, featuring a backend Express server with MongoDB, and a frontend Next.js client, both dockerizeVd for ease of development and deployment.
 
 ## Features
 
@@ -11,6 +11,7 @@ Welcome to the Capstone Full-Stack Template! This repository is a starting point
 ## Prerequisites
 
 Before you begin, ensure you have the following installed on your system:
+
 - Docker and Docker Compose
 - Node.js (recommended: the latest LTS version)
 - Git (for cloning the repository)
