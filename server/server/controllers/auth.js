@@ -1,9 +1,6 @@
 const User = require("../models/user");
 
-// Render Signin Page
-exports.getSignIn = (req, res) => {
-  res.render("signin");
-};
+
 
 // Signin logic, need 2 work on validation later
 exports.postSignIn = async (req, res) => {
@@ -16,25 +13,24 @@ exports.postSignIn = async (req, res) => {
       if (!isMatch) {
         return res
           .status(400)
-          .render("signin", { errorMessage: "Invalid email or password." });
+          .json({ errorMessage: "Invalid email or password." });
       }
       req.session.user = user;
       req.session.user_id = user.id;
       console.log(req.session.user_id);
-      res.redirect("/user/home");
+      return res
+      .status(200)
+      .json({ message: "logged in" });
     } else {
       return res
         .status(400)
-        .render("signin", { errorMessage: "Invalid email or password." });
+        .json({ errorMessage: "Invalid email or password." });
     }
   } catch (error) {
     res.status(500).send(error.message);
   }
 };
 
-exports.getRegisterUser = (req, res) => {
-  res.render("register");
-};
 
 exports.postRegisterUser = async (req, res) => {
   let { name, email, password, confirmPassword } = req.body;
@@ -44,20 +40,20 @@ exports.postRegisterUser = async (req, res) => {
     if (user) {
       return res
         .status(400)
-        .render("register", { errorMessage: "Email already exists." });
+        .json({ errorMessage: "Email already exists." });
     }
     if (password !== confirmPassword) {
       return res
         .status(400)
-        .render("register", {
+        .json({
           errorMessage: "Password confirmation does not match.",
         });
     }
     email = email.toLowerCase();
     const newUser = await User.create({ name, email, password });
-    return res.status(201).render("signin");
+    return res.status(201).json({message:"registered"});
   } catch (error) {
-    return res.status(400).render("register", { errorMessage: error.message });
+    return res.status(400).json({ errorMessage: error.message });
   }
 };
 
@@ -67,6 +63,7 @@ exports.getSignOut = (req, res) => {
     if (err) {
       return res.status(500).send(err.message);
     }
-    res.redirect("/signin");
+    return res.status(200).json({message:"signed out"});
+
   });
 };
