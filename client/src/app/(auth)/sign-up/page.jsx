@@ -9,10 +9,33 @@ export default function SignUp() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle login logic here
+    setError("");
+    setSuccess("");
+
+    try {
+      const response = await axios.post("/register", {
+        name: fullName,
+        email,
+        password,
+        confirmPassword,
+      });
+
+      if (response.status === 201) {
+        setSuccess("Registration successful!");
+        // Optionally, you can redirect the user to another page here
+      }
+    } catch (error) {
+      if (error.response) {
+        setError(error.response.data.errorMessage);
+      } else {
+        setError("An error occurred. Please try again later.");
+      }
+    }
   };
 
   return (
@@ -28,6 +51,9 @@ export default function SignUp() {
               Provide your details to get started with support
             </p>
             <form onSubmit={handleSubmit}>
+            {error && (
+            <div className="mb-4 text-sm text-red-500 text-center">{error}</div>
+          )}
               <div className="mb-4">
                 <label
                   htmlFor="fullname"
@@ -167,8 +193,9 @@ export default function SignUp() {
                 <button
                   type="submit"
                   className="w-full flex justify-center py-2 px-4 border border-black text-sm font-medium"
-                >
-                  Sign Up
+                disabled={loading}
+            >
+              {loading ? "Submitting..." : "Sign Up"}
                 </button>
               </div>
             </form>
