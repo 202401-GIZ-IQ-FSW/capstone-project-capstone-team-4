@@ -1,5 +1,7 @@
+'use client'
 import React, { useState } from "react";
 import "./TicketForm.css";
+import Navbar from "@/app/components/profile/Navbar";
 
 const TicketForm = () => {
   const [formData, setFormData] = useState({
@@ -29,15 +31,7 @@ const TicketForm = () => {
 
   return (
     <div className="ticket-form-container">
-      <header>
-        <h1>TicketMaster</h1>
-        <nav>
-          <p>Support</p>
-          <p>New</p>
-          <button>Submit</button>
-          <button>View Tickets</button>
-        </nav>
-      </header>
+        <Navbar />
       <main>
         <div className="progress-bar">
           <div className="step completed">
