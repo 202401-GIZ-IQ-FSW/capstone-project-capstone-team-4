@@ -1,5 +1,17 @@
 const Ticket = require("../models/ticket"); // Adjust the path if necessary
 
+// search tickets
+exports.searchTickets = async (req, res) => {
+  const { submitter, status } = req.body;
+
+  try {
+    const tickets = await Ticket.find({ submitter, status });
+    res.json(tickets);
+  } catch (err) {
+    res.status(400).json("Error: " + err);
+  }
+};
+
 // Create a new ticket
 exports.createTicket = async (req, res) => {
   try {
