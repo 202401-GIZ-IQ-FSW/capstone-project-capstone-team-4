@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Formik, Field, ErrorMessage } from "formik";
 import Modal from "react-modal";
+import { searchTicketsAsync } from "../../redux2/ticketSlice"; // Adjust path
 
 const customStyles = {
   content: {
@@ -16,9 +18,21 @@ const customStyles = {
 };
 
 const SearchModal = ({ isOpen, closeModal }) => {
+  // const dispatch = useDispatch();
+  // const { loading, error } = useSelector((state) => state.ticket);
+
   useEffect(() => {
     Modal.setAppElement("#__next");
   }, []);
+
+  const handleSearch = async (values) => {
+    try {
+      // await dispatch(searchTicketsAsync(values));
+      closeModal();
+    } catch (err) {
+      console.error("Error searching tickets:", err);
+    }
+  };
 
   return (
     <Modal
@@ -30,7 +44,7 @@ const SearchModal = ({ isOpen, closeModal }) => {
       <Formik
         initialValues={{ submitter: "", status: "" }}
         onSubmit={(values, actions) => {
-          console.log(values);
+          handleSearch(values);
           actions.setSubmitting(false);
         }}
       >
@@ -247,7 +261,10 @@ const SearchModal = ({ isOpen, closeModal }) => {
                   Clear
                 </div>
                 <div className="text-right">
-                  <button className="bg-white border border-gray-700 hover:border-gray-400 text-gray-700 font-semibold py-2 px-20 rounded-sm shadow-sm hover:shadow-md transition duration-300 ease-in-out">
+                  <button
+                    type="submit"
+                    className="bg-white border border-gray-700 hover:border-gray-400 text-gray-700 font-semibold py-2 px-20 rounded-sm shadow-sm hover:shadow-md transition duration-300 ease-in-out"
+                  >
                     Search
                   </button>
                 </div>
