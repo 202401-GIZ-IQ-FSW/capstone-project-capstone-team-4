@@ -8,6 +8,7 @@ require("dotenv").config();
 
 const connectToMongo = require("./db/connection");
 const authRoutes = require("./routes/auth");
+const ticketRoutes = require("./routes/ticketRoutes");
 const app = express();
 const port =
   process.env.NODE_ENV === "test"

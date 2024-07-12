@@ -1,3 +1,5 @@
+const mongoose = require("mongoose");
+
 const ticketSchema = mongoose.Schema(
   {
     owner: {
@@ -21,8 +23,8 @@ const ticketSchema = mongoose.Schema(
     issue: { type: String, required: true },
     closedDate: { type: Date },
     dueDate: { type: Date },
-    comments: [commentSchema],
-    notes: [noteSchema],
+    // comments: [commentSchema],
+    // notes: [noteSchema],
   },
   { timestamps: true }
 );
