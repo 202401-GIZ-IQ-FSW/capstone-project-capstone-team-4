@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const session = require("express-session");
+const logger = require('./utils/logger');
 
 require("dotenv").config();
 
