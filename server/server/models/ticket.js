@@ -1,24 +1,30 @@
-const ticketSchema = mongoose.Schema({
+const ticketSchema = mongoose.Schema(
+  {
     owner: {
       type: mongoose.Schema.Types.ObjectId,
       required: true,
-      ref: 'user'
+      ref: "user",
     },
     assignee: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: 'user'
+      ref: "user",
     },
     updated: { type: Date },
     deleted: { type: Boolean, default: false, required: true, index: true },
-    status: {type:String, enum: ["done", "working", "not started"], default: "Rather not to say"},
+    submitter: { type: String, required: true },
+    status: {
+      type: String,
+      enum: ["done", "working", "not started"],
+      default: "Rather not to say",
+    },
     subject: { type: String, required: true },
     issue: { type: String, required: true },
     closedDate: { type: Date },
     dueDate: { type: Date },
     comments: [commentSchema],
     notes: [noteSchema],
-  }
-  ,{ timestamps: true }
-)
+  },
+  { timestamps: true }
+);
 
-module.exports = mongoose.model('ticket', ticketSchema);
+module.exports = mongoose.model("ticket", ticketSchema);
