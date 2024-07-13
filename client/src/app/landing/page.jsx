@@ -1,6 +1,6 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-
+import Link from "next/link";
 export default function LandingPage() {
   return (
     <div>
@@ -18,10 +18,10 @@ export default function LandingPage() {
 
             <div className="flex  md:mt-14 mt-4 gap-4">
               <div className="border-[1px] border-black rounded px-8 py-2 text-center cursor-pointer hover:bg-gray-100">
-                <p className="text-nowrap">Submit</p>
+                <p className="text-nowrap"><Link href={'auth/sign-up'}>Sign Up</Link></p>
               </div>
               <div className="border-[1px] border-black rounded px-8 py-2 text-center cursor-pointer hover:bg-gray-100">
-                <p className="text-nowrap">New ticket</p>
+                <p className="text-nowrap"><Link href='tickets/creates'>New ticket</Link></p>
               </div>
             </div>
           </div>

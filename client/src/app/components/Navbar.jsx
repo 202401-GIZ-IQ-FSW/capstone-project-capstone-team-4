@@ -30,7 +30,7 @@ export default function Navbar() {
         </Link>
         <button onClick={openModal}>Search tickets</button>{" "}
         <SearchModal isOpen={isModalOpen} closeModal={closeModal} />
-        <Link href="/createticket">
+        <Link href="/">
           <p>Create</p>
         </Link>
         <Link href="/">
@@ -39,7 +39,7 @@ export default function Navbar() {
       </div>
       <div>
         <div className="border-[1px] border-black rounded px-8 py-2 text-center cursor-pointer hover:bg-gray-100">
-          <p>Sign in</p>
+          <Link href='/auth/sign-in'> <p>Sign in</p></Link>
         </div>
       </div>
     </nav>

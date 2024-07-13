@@ -1,17 +1,39 @@
 'use client'
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import Footer from "../../components/profile/Footer";
+import Navbar from "../../components/profile/Navbar";
 //import { useRouter } from 'next/router';
 
 const CreateTicket = () => {
+  const [userData, setUserData] = useState(null);
+   
+  // if(!userData){
+  //   window.location.href = "/auth/sign-in"; 
+  // }
   const [formData, setFormData] = useState({
-    assignee: '',
     status: 'not started',
     subject: '',
     issue: '',
     dueDate: '',
+    owner:''
   });
   const [error, setError] = useState('');
   //const router = useRouter();
+
+  useEffect(() => {
+    const storedUserData = JSON.parse(localStorage.getItem('user'));
+    console.log(storedUserData)
+    if (!storedUserData) {
+      window.location.href = "/auth/sign-in";
+    } else {
+      setUserData(storedUserData);
+    } setFormData({
+      ...formData,
+      owner: storedUserData._id,
+    });
+    
+  }, []);
+
 
   const handleChange = (e) => {
     setFormData({
@@ -22,8 +44,9 @@ const CreateTicket = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log(formData)
     try {
-      const response = await fetch('/api/tickets', {
+      const response = await fetch('http://localhost:3001/api/ticket', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -35,14 +58,17 @@ const CreateTicket = () => {
         const errorData = await response.json();
         throw new Error(errorData.error || 'An error occurred');
       }
-
+      window.location.href = "/tickets/all";
       //router.push('/tickets'); // Redirect to tickets list page
     } catch (error) {
       setError(error.message);
     }
   };
-
+  
   return (
+    <>
+     <Navbar />
+    {userData &&
     <div className="flex justify-center items-center min-h-screen bg-gray-100">
       <div className="bg-white p-8 rounded shadow-md w-full max-w-md">
         <h2 className="text-2xl font-bold mb-4">Create New Ticket</h2>
@@ -140,7 +166,9 @@ const CreateTicket = () => {
         </form>
       </div>
     </div>
-  );
+}
+<Footer />
+</>);
 };
 
 export default CreateTicket;

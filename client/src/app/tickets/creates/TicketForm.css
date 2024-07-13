@@ -1,0 +1,176 @@
+nav p {
+    padding-left: 2ex;
+    padding-right: 2ex;
+  }
+  
+  nav button {
+    margin: 0 5px;
+    height: 2em;
+    border: 1px solid #000;
+    background-color: #fff;
+  }
+  
+  .progress-bar {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+  }
+  
+  .progress-bar .step {
+    flex: 1;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+  }
+  
+  .progress-bar .step .step-number {
+    width: 30px;
+    height: 30px;
+    background-color: #ddd;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5px;
+    position: absolute;
+    top: 0;
+    transform: translateY(-50%);
+  }
+  
+  .progress-bar .step span {
+    margin-top: 20px;
+  }
+  
+  .progress-bar .step.completed .step-number {
+    background-color: #4caf50;
+    color: #fff;
+  }
+  
+  .progress-bar .step.current .step-number {
+    background-color: #2196f3;
+    color: #fff;
+  }
+  
+  .ticket-form {
+    padding: 20px;
+    
+    background: #fff;
+    max-width: 800px;
+    margin: 20px auto;
+    text-align: left;
+  }
+  
+  .ticket-form h2 {
+    margin-bottom: 20px;
+  }
+  
+  .ticket-form .form-row {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+  }
+  
+  .ticket-form .form-group {
+    flex: 1;
+    align-items: center;
+    margin-right: 50px;
+    
+  }
+  
+  .ticket-form .form-group:last-child {
+    margin-right: 0;
+  }
+  
+  .ticket-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+
+  .ticket-form .choices label {
+    font-weight: normal; /* Reset font weight to normal for labels inside .choices */
+}
+  
+  .ticket-form input[type="text"],
+  .ticket-form input[type="email"],
+  .ticket-form input[type="tel"],
+  .ticket-form input[type="date"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .ticket-form input[type="radio"] {
+    margin-right: 5px;
+  }
+  
+  .ticket-form button {
+    padding: 10px 20px;
+    background: #fff;
+    color: #000;
+    border: 1px solid #000;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .ticket-form button:hover {
+    background: #f0f0f0;
+  }
+  
+  footer {
+    margin-top: 40px;
+    padding: 10px;
+    background: #f5f5f5;
+    border-top: 1px solid #ddd;
+    text-align: center;
+  }
+  
+  footer p {
+    margin: 10px 0;
+  }
+  
+  footer nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  footer nav button {
+    margin: 0 5px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  
+  .choices {
+    display: flex;
+    gap: 20px;
+    font-size: 16px;
+    margin-top: 0.6em;
+  }
+  
+  .input {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+  }
+  
+  .insurance {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 4px;
+    margin-bottom: 1em;
+  }
+  
+  .insurance .choices {
+    justify-content: flex-start;
+    gap: 40px;
+  }
+  
+
