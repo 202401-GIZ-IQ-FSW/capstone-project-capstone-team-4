@@ -1,14 +1,43 @@
 import React from "react";
-import Navbar from "../components/profile/Navbar";
-import Footer from "../components/profile/Footer";
-import TeamMembers from "../components/about/Teammember"
+import Navbar from "../components/about/Navbar";
+import Footer from "../components/about/Footer";
+import Introduction from "../components/about/Introduction";
+import TeamMembers from "../components/about/Teammember";
+import MissionVision from "../components/about/MissionVision";
+import CompanyHistory from "../components/about/CompanyHistory";
+import ContactInformation from "../components/about/ContactInformation";
+import "../Styles/styles.css";
+import '@fortawesome/fontawesome-svg-core/styles.css';
+
+
+
+
 const page = () => {
   return (
     <>
+
+    <div className="container">
+      <header className="header">
+      </header>
       <Navbar />
-      <h1> Hello! About page. </h1>
-      <TeamMembers/>
-          <Footer />
+      <div className="Introduction"> 
+        <Introduction />
+        </div>
+        <div className="team-members">
+      <TeamMembers />
+      </div>
+      <div className="mission-vision">
+      <MissionVision />
+      </div>
+      <div className="company-history">
+      <CompanyHistory />
+      </div>
+      <div className="contact-information">
+      <ContactInformation />
+      </div>
+      <Footer />
+    </div>
+      
         
     </>
   );
