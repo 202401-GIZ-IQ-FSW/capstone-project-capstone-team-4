@@ -30,7 +30,7 @@ export default function Navbar() {
         </Link>
         <button onClick={openModal}>Search tickets</button>{" "}
         <SearchModal isOpen={isModalOpen} closeModal={closeModal} />
-        <Link href="/">
+        <Link href="/createticket">
           <p>Create</p>
         </Link>
         <Link href="/">
