@@ -11,7 +11,7 @@ export const fetchTicketsAsync = createAsyncThunk(
   "ticket/fetchTickets",
   async () => {
     try {
-      const response = await axios.get("/tickets"); // Adjust endpoint URL
+      const response = await axios.get("/tickets");
       return response.data;
     } catch (error) {
       throw new Error("Failed to fetch tickets");
