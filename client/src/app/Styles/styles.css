@@ -1,0 +1,321 @@
+body {
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+
+}
+
+
+
+.container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+  
+}
+
+
+
+.header {
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    color: #333;
+    
+}
+
+.team-members, .mission-vision, .company-history, .contact-information {
+    margin-bottom: 20px;
+    
+    
+}
+
+.team-members {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    width: 100vh;
+    margin-right: 40px;
+    
+    
+}
+
+.team-members .team-member {
+    text-align: center;
+    flex: 1;
+
+}
+
+
+.team-member {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+
+
+
+
+
+.team-members-heading {
+    font-size:  1.5rem;
+    color: black; 
+    margin-bottom: 10px; 
+    font-weight: bold;
+    margin-top: 40px;
+    text-align: left; 
+    padding-left: 40px;
+    padding-top: 7px;
+    margin-bottom: 20px;
+    
+    
+  }
+
+
+
+.team-member img {
+    max-width: 300px; 
+    max-height: 120px; 
+    width: auto; 
+    height: auto; 
+    object-fit: cover;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+   
+  }
+
+
+
+.team-members .team-member h3 {
+    margin-top: 10px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+
+.team-members .team-member h4 {
+    font-size: 11.5px;
+    color: #666;
+}
+
+
+
+.team-members .team-member p {
+    font-size: 13px;
+    color: #666;
+}
+
+.mission-vision, .company-history, .contact-information {
+    padding: 20px;
+}
+
+.mission-vision h2, .company-history h2, .contact-information h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.mission-vision p, .company-history p, .contact-information p {
+    font-size: 14px;
+    color: #666;
+}
+
+
+
+
+
+/*style for navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 10px 20px;
+    text-align: right;  /*i wnat to contect in navbar goes right*/
+    box-shadow: 0 3px 2px -2px rgba(0, 0, 0, 0.2);
+
+
+    
+}
+
+
+.navbar-brand {
+    font-size: 17px;
+    font-weight: bold;
+    color: #333;
+}
+
+.navbar-nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 8px;
+    margin-left: auto; 
+ 
+
+}
+
+
+.navbar-nav li {
+    display: inline;
+}
+
+.navbar-nav a {
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+    margin-right: 22px;
+}
+
+
+
+
+.navbar-nav a:hover {
+    text-decoration: underline;
+}
+
+
+.Join-btn {
+    border: 2px solid #000;
+    color:black;
+    padding: 10px 30px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.Join-btn:hover {
+    background-color:#0056b3;
+}
+
+
+
+.introduction {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    margin-top: 9px;
+}
+
+.section-header {
+    text-align: left; 
+    margin-bottom: 10px;
+}
+
+.section-header h2 {
+    font-size: 22px;
+    color: black; 
+    font-weight: bold;
+}
+
+.section-content {
+    text-align: left;
+}
+
+.content-text p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #666;
+    margin-top: 10px; 
+}
+
+
+
+
+/*footer*/
+
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px 2px;
+    flex-wrap: wrap;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+
+}
+
+.footer-left,
+.footer-center,
+.footer-right {
+    display: flex;
+    align-items: center;
+}
+
+.footer-left {
+    flex-direction: column;
+    align-items: start;
+    font-size: 12px;
+    color: #666;
+}
+
+
+.footer-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    font-size: 12px;
+    color: #666;
+
+}
+
+
+.footer-left a,
+.footer-right a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+.footer-left a {
+    margin-bottom: 1.5px;
+}
+
+.footer-right a {
+    margin-left: 15px;
+}
+
+
+/* design of social icons in contact information*/
+.social-icons {
+    display: flex; 
+    gap: 10px; 
+    margin-top: 16px; 
+}
+
+.social-icons a {
+    text-decoration: none; 
+    color: black; 
+}
+
+/*design of social media of footer */
+
+.social-media {
+    display: flex;
+    gap: 10px;
+
+}
+
+
+.social-media a {
+    text-decoration: none;
+    color: black;
+}
+
+
+
+
+
