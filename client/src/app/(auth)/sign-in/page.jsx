@@ -6,10 +6,36 @@ export default function SignIn() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [rememberMe, setRememberMe] = useState(false);
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e) => {
+ 
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle login logic here
+    setLoading(true);
+    setError("");
+    try {
+      const response = await fetch("/api/signin", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, password, rememberMe }),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        // Handle successful login here, e.g., redirect to another page
+        window.location.href = "/dashboard"; // Example redirection
+      } else {
+        const errorData = await response.json();
+        setError(errorData.errorMessage || "Something went wrong!");
+      }
+    } catch (error) {
+      setError("An error occurred. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -20,6 +46,9 @@ export default function SignIn() {
           Sign in to manage your support tickets
         </p>
         <form onSubmit={handleSubmit}>
+        {error && (
+            <div className="mb-4 text-sm text-red-500 text-center">{error}</div>
+          )}
           <div className="mb-4">
             <label htmlFor="email" className="block text-gray-700 text-sm">
               Enter your email address
@@ -102,8 +131,9 @@ export default function SignIn() {
             <button
               type="submit"
               className="w-full flex justify-center py-2 px-4 border border-black text-sm font-medium"
+              disabled={loading}
             >
-              Submit
+              {loading ? "Submitting..." : "Submit"}
             </button>
           </div>
           <div className="mt-6 flex items-center justify-center">
