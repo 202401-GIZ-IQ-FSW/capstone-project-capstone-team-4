@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
+import axios from "axios";
 
 export default function SignUp() {
   const [fullName, setFullName] = useState("");
@@ -11,11 +12,13 @@ export default function SignUp() {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
     setSuccess("");
+    setLoading(true);
 
     try {
       const response = await axios.post("/register", {
@@ -27,7 +30,6 @@ export default function SignUp() {
 
       if (response.status === 201) {
         setSuccess("Registration successful!");
-        // Optionally, you can redirect the user to another page here
       }
     } catch (error) {
       if (error.response) {
@@ -35,6 +37,8 @@ export default function SignUp() {
       } else {
         setError("An error occurred. Please try again later.");
       }
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -51,9 +55,11 @@ export default function SignUp() {
               Provide your details to get started with support
             </p>
             <form onSubmit={handleSubmit}>
-            {error && (
-            <div className="mb-4 text-sm text-red-500 text-center">{error}</div>
-          )}
+              {error && (
+                <div className="mb-4 text-sm text-red-500 text-center">
+                  {error}
+                </div>
+              )}
               <div className="mb-4">
                 <label
                   htmlFor="fullname"
@@ -87,7 +93,7 @@ export default function SignUp() {
                 />
               </div>
               <div className="mb-4">
-                <label htmlFor="ema il" className="block text-gray-700 text-sm">
+                <label htmlFor="email" className="block text-gray-700 text-sm">
                   E-mail *
                 </label>
                 <input
@@ -193,9 +199,9 @@ export default function SignUp() {
                 <button
                   type="submit"
                   className="w-full flex justify-center py-2 px-4 border border-black text-sm font-medium"
-                disabled={loading}
-            >
-              {loading ? "Submitting..." : "Sign Up"}
+                  disabled={loading}
+                >
+                  {loading ? "Submitting..." : "Sign Up"}
                 </button>
               </div>
             </form>
