@@ -38,9 +38,11 @@ export default function Navbar() {
         </Link>
       </div>
       <div>
-        <div className="border-[1px] border-black rounded px-8 py-2 text-center cursor-pointer hover:bg-gray-100">
-          <p>Sign in</p>
-        </div>
+        <Link href="/sign-in">
+          <div className="border-[1px] border-black rounded px-8 py-2 text-center cursor-pointer hover:bg-gray-100">
+            <p>Sign in</p>
+          </div>
+        </Link>
       </div>
     </nav>
   );
