@@ -11,7 +11,6 @@ const ticketSchema = mongoose.Schema(
     },
     updated: { type: Date },
     deleted: { type: Boolean, default: false, required: true, index: true },
-    submitter: { type: String, required: true },
     status: {
       type: String,
       enum: ["done", "working", "not started"],
