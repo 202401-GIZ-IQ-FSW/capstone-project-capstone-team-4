@@ -1,0 +1,211 @@
+body {
+    font-family: Arial, sans-serif;
+
+}
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin-left: 55px;
+    font-size: 15px;
+}
+
+header button {
+    padding: 10px 20px;
+    border: 1px solid black;
+    margin-right: 60px;
+    font-weight: bold;
+}
+
+
+.main-content {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+
+.contact-form {
+    flex: 1;
+    padding-left: 50px;
+}
+
+.contact-form h2 {
+    font-weight: bold;
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+
+
+.contact-form input, .contact-form textarea {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    width: calc(100% - 22px); 
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    box-sizing: border-box; 
+    font-size: 13px;
+}
+
+.contact-form textarea {
+    height: 85px; 
+}
+
+
+.contact-form button {
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-weight: bold;
+    box-sizing: border-box; 
+    width: calc(100% - 22px); 
+}
+
+
+
+
+.contact-details-container {
+    background-color: #f0f0f0; /* Light gray background color */
+    padding: 20px; 
+    margin-left: 10px; 
+    height: 100%; 
+    margin-top: 90px;
+    margin-left: 140px;
+    margin-right: 60px;
+    padding-top: 25px;
+    padding-right: 105px; /*i try to design these margin and pudding in button*/
+}
+
+
+
+
+.contact-details {
+    flex: 1;
+    margin: 0;
+    padding: 0; 
+    margin-left: 10px;
+}
+
+
+.contact-details h2 {
+    font-size: 17px; /* Example: Adjust heading font size */
+    font-weight: bold;
+}
+
+.contact-details p {
+    margin-bottom: 10px; /* Space between paragraphs */
+}
+
+
+
+
+
+
+
+
+footer .map {
+    height: 200px;
+}
+
+
+
+
+
+/*footer*/
+
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px 2px;
+    flex-wrap: wrap;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+
+}
+
+.footer-left,
+.footer-center,
+.footer-right {
+    display: flex;
+    align-items: center;
+}
+
+.footer-left {
+    flex-direction: column;
+    align-items: start;
+    font-size: 12px;
+    color: #666;
+}
+
+
+.footer-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    font-size: 12px;
+    color: #666;
+
+}
+
+
+.footer-left a,
+.footer-right a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+.footer-left a {
+    margin-bottom: 1.5px;
+}
+
+.footer-right a {
+    margin-left: 15px;
+}
+
+
+
+/* design of social icons in contact information*/
+.social-icons {
+    display: flex; 
+    gap: 10px; 
+    margin-top: 16px; 
+}
+
+.social-icons a {
+    text-decoration: none; 
+    color: black; 
+}
+
+/*design of social media of footer */
+
+.social-media {
+    display: flex;
+    gap: 10px;
+
+}
+
+
+.social-media a {
+    text-decoration: none;
+    color: black;
+}
+
+
+

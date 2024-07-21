@@ -1,22 +1,23 @@
 import React from "react";
-import Navbar from "../components/profile/Navbar";
+import Header from "../components/contact-us/Header";
+import ContactForm from "../components/contact-us/ContactForm";
+import ContactDetails from "../components/contact-us/ContactDetails";
 import Footer from "../components/about/Footer";
-import TeamMembers from "../components/about/Teammember"
+import "../Styles/contactUs.css";
+import '@fortawesome/fontawesome-svg-core/styles.css';
 
-    const Header = () => {
+    const App = () => {
       return (
-        <header>
-          <nav>
-            <ul>
-              <li><a href="#">Submit a</a></li>
-              <li><a href="#">Check</a></li>
-              <li><a href="#">Tec Our</a></li>
-              <li><a href="#">Suppor</a></li>
-            </ul>
-          </nav>
-          <button>Get Help</button>
-        </header>
-  );
-};
+        <div>
+          <Header />
+          <div className="main-content">
+            <ContactForm />
+            <ContactDetails />
+          </div>
+          <Footer />
+        </div>
+      );
+    };
 
-export default Header;
+
+    export default App;
